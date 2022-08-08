@@ -1,0 +1,61 @@
+
+  <div class="todo-app">
+    <div class="todo-app-wrap">
+      <div class="todo-app-header">
+        <mat-toolbar color="primary">
+          <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+            <mat-icon>menu</mat-icon>
+          </button>
+          <span>To Do App</span>
+          <span class="example-spacer"></span>
+        </mat-toolbar>
+      </div>
+      <div class="todo-app-body">
+        <form class="add-todo-form" (ngSubmit)="onSubmit()" #todoForm="ngForm">  
+          <div class="form-control-wrapper">
+            <mat-form-field >
+              <mat-label>Input your todo</mat-label>
+              <input matInput placeholder="Ex: Do homework." id="name" name="name" [(ngModel)]="currentTodo.name" #name="ngModel">
+            </mat-form-field>
+          </div>
+          <button mat-raised-button color="primary" type="submit" >Submit</button>
+        </form>
+        <div *ngIf="messageService.message.type !== ''" class="message-wrap" [class.success]="messageService.message.type === 'success'" [class.error]="messageService.message.type === 'error'" >
+            <span>{{messageService.message.message}}</span>
+        </div>
+        <div class="todo-list-wrap">
+            <div class="todo-list">
+              <ul>
+                <li *ngFor="let todo of todolist" [class.selected]="todo.id === currentTodo.id">
+                  <span>
+                    {{todo.name}}
+                  </span>
+                  <div class="button-feature-wrap">
+                    <button mat-icon-button onclick="" (click)="setCurrentTodo(todo)">   
+                      <mat-icon style="color: green;">edit</mat-icon>
+                    </button>
+                    <button mat-icon-button (click)="deleteTodo(todo.id)"> 
+                      <mat-icon style="color: rgb(252, 58, 58);">delete</mat-icon>
+                    </button>
+                  </div>
+                </li>
+              </ul>
+            </div>
+        </div>
+
+
+      </div>
+      <div class="todo-app-footer">
+         
+          <button mat-raised-button color="warn" (click)="deleteAllTodo()">Clear list todo</button>
+      </div>
+      
+    </div>
+  </div>
+  
+
+ 
+  <div class="example-container">
+ 
+  
+  </div>

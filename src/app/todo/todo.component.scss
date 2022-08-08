@@ -1,0 +1,108 @@
+.todo-app{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    padding-top: 100px;
+    justify-content: center;
+    background-color: rgb(8, 4, 36);
+    .todo-app-wrap{
+        width: 500px;
+        height: 700px;
+        border: 1px solid;
+        background-color: #fff;
+        border-radius: 10px;
+    }
+    .form-control-wrapper{
+        font-size: 18px;
+        width: 100%;
+    }
+    .mat-form-field{
+        width: 100%;
+        padding-right: 5px;
+    }
+    .add-todo-form{
+        padding: 10px;
+        display: flex;
+        align-items: baseline;
+    }
+    .message-wrap.error{
+        margin: 5px 10px;
+        border-radius: 5px;
+        height: 30px;
+        background-color: rgb(248, 179, 179);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        span{
+            color: rgb(204, 43, 43);
+            font-size: 16px;
+           
+        }
+    }
+    .message-wrap.success {
+        margin: 5px 10px;
+        border-radius: 5px;
+        height: 30px;
+        background-color: rgb(204, 255, 197);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        span{
+            color: rgb(58, 156, 75);
+            font-size: 16px;   
+        }
+    }
+    .todo-list-wrap{
+        width: 100%;
+        height: 450px;
+        overflow: auto;
+        .todo-list{
+            .selected{
+                background-color: rgb(187, 187, 187) !important;
+            }
+            ul{
+                list-style-type: none;
+                padding: 10px;
+                margin: 5px;
+                li{
+                    background-color: rgb(224, 224, 224);
+                    font-size: 18px;
+                    padding: 5px;
+                    margin: 5px;
+                    border-radius: 5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    button{
+                        margin: 2px;
+                    }
+                    span{
+                        margin-left: 10px;
+                    }
+                    .button-feature-wrap{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        .mat-icon-button{
+                            width: 30px;
+                            height: 30px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            span{
+                             display: block;
+                            }
+                           
+                         }
+                    }  
+                }
+            }
+        }
+    }
+    .todo-app-footer{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 5px;
+    }
+}
